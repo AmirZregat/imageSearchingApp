@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/imagesFragment2"
+        android:name="com.project.unsplash.ui.images.ImagesFragment"
+        android:label="fragment_images"
+        tools:layout="@layout/fragment_images" >
+        <action
+            android:id="@+id/action_imagesFragment2_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="word"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.project.unsplash.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_imagesFragment2"
+            app:destination="@id/imagesFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.project.unsplash.ui.splashScreen.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+</navigation>
